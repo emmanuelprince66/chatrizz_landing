@@ -1,24 +1,33 @@
 import type { Metadata } from "next";
-import { Inter, Work_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
+// Fonts are self-hosted (latin subset, variable weight) so builds don't
+// need to reach Google Fonts.
+
 // Inter font for body text
-const inter = Inter({
-  subsets: ["latin"],
+const inter = localFont({
+  src: "../fonts/inter-latin.woff2",
   variable: "--font-inter",
+  weight: "100 900",
+  display: "swap",
 });
 
 // Work Sans as Cabinet Grotesk alternative (or you could use: Outfit, Public Sans, or Space Grotesk)
-const workSans = Work_Sans({
-  subsets: ["latin"],
+const workSans = localFont({
+  src: "../fonts/work-sans-latin.woff2",
   variable: "--font-work-sans",
-  weight: ["400", "500", "600", "700"],
+  weight: "400 700",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Chatrizz - Find People. Drop Rizz. Grow Your Hustle.",
   description:
     "A location-aware social app where meeting new people, growing your vibe, and promoting your hustle all happens in one tap.",
+  verification: {
+    google: "OCk7qpsVbUZrcyOyZ5yS3mFkqekmm3i1ow54tHzU99A",
+  },
 };
 
 export default function RootLayout({

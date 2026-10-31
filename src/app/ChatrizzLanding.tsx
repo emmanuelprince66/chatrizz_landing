@@ -11,8 +11,8 @@ export default function ChatrizzLanding() {
             <div className="w-full h-full rounded-lg flex items-center justify-center">
               <Image src="/assets/n1.png" alt="Logo" width={32} height={32} />
             </div>
-            <p className="text-2xl font-cabinet  flex">
-              <p className="font-[600]">Chat</p>rizz
+            <p className="text-2xl font-cabinet">
+              <span className="font-[600]">Chat</span>rizz
             </p>
           </div>
           <button className="bg-gradient-to-r cursor-pointer from-[#00d0f5] to-[#0892d0] text-[#fafafa] px-4 sm:px-6 py-2 sm:py-4 flex justify-center items-center rounded-full font-inter font-medium hover:opacity-90 transition-opacity">
@@ -34,7 +34,7 @@ export default function ChatrizzLanding() {
           </div>
 
           {/* Hero Content */}
-          <section className="px-2 sm:px-6 py-16 w-full mx-auto mt-16 relative z-10">
+          <section className="px-2 sm:px-6 pt-16 pb-4 w-full mx-auto mt-16 relative z-10">
             <div className="grid grid-cols-1 gap-12 items-center justify-center">
               <div className="flex flex-col mx-auto text-center items-center justify-center">
                 <p className="text-5xl gradient-text-hero font-[600] font-work-sans lg:text-7xl font-cabinet font-bold leading-tight mb-6">
@@ -72,7 +72,7 @@ export default function ChatrizzLanding() {
           </section>
 
           {/* What is Chatrizz Section */}
-          <section className="px-2 sm:px-6    lg:py-16 w-full mx-auto mt-5 lg:mt-16 relative z-10">
+          <section className="px-2 sm:px-6 w-full mx-auto mt-2 lg:-mt-8 relative z-10">
             <div className="text-center mb-12">
               {/* <p className="text-[#00d0f5] font-inter bg-[#03212E] px-3 py-2 w-fit mx-auto rounded-full text-sm font-medium mb-4">
                 What is Chatrizz?
@@ -87,7 +87,7 @@ export default function ChatrizzLanding() {
               </p>
             </div>
 
-            <div className="flex justify-center mt-[5rem] w-full">
+            <div className="flex justify-center mt-10 w-full">
               <Image
                 src={"/assets/main_one.png"}
                 alt="Hero"
@@ -99,7 +99,7 @@ export default function ChatrizzLanding() {
 
             {/* add it here */}
 
-            <div className="w-full min-h-screen mt-[5rem] md:mt-[10rem]  flex items-center justify-center">
+            <div className="w-full mt-12 md:mt-16 flex items-center justify-center">
               <div className="max-w-7xl w-full  p-3 rounded-2xl bg-[#022732] ">
                 {/* Grid Container - Mobile: 1 col, Desktop: 3 cols */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
@@ -129,7 +129,7 @@ export default function ChatrizzLanding() {
                       alt="Hero"
                       height={1000}
                       width={1000}
-                      className="h-[206px] w-full"
+                      className="hidden lg:block h-[206px] w-full"
                     />
                   </div>
 
@@ -146,7 +146,7 @@ export default function ChatrizzLanding() {
 
                     {/* Card 5 - Bottom */}
                     <Image
-                      src={"/assets/reel_one.png"}
+                      src={"/assets/reel_five.png"}
                       alt="Hero"
                       height={1000}
                       width={1000}
@@ -163,7 +163,7 @@ export default function ChatrizzLanding() {
                       alt="Hero"
                       height={100}
                       width={100}
-                      className=" object-fit h-[99px] w-full"
+                      className="hidden lg:block h-[99px] w-full"
                     />
 
                     {/* Card 7 - Tall */}
@@ -198,21 +198,21 @@ export default function ChatrizzLanding() {
             </p> */}
 
             <h2 className="text-4xl font-work-sans gradient-text-hero text-[30px] font-[500] mb-6">
-              Start selling beyond boarder
+              Start selling beyond borders
             </h2>
 
             <p className="text-gray-300 font-inter w-full mx-auto leading-relaxed md:w-2/3">
-              Create a start that helps you find customers from anywhere in the
+              Create a store that helps you find customers from anywhere in the
               world and grow your business.
             </p>
           </div>
           <div className="bg-[#00D0F51A] w-full rounded-2xl px-1 py-3 sm:px-10 sm:py-6 md:py-10 lg:px-16">
             <div className="grid lg:grid-cols-2 gap-16 items-center px-2 sm:px-6">
               <div className="flex flex-col gap-4 items-center lg:items-start ">
-                <p className="font-work-sans text-[25px] md:text-[45px] font-[500]  text-center lg:text-left text-white">
+                <p className="font-work-sans text-[28px] md:text-[40px] lg:text-[36px] xl:text-[40px] font-[500] leading-tight text-center lg:text-left text-white">
                   Discover Products & Services
                 </p>
-                <p className="font-inter text-[15px] font-[400] text-white">
+                <p className="font-inter text-[15px] font-[400] text-white text-center lg:text-left">
                   Find what’s trending in your area
                 </p>
 
@@ -237,20 +237,20 @@ export default function ChatrizzLanding() {
 
         {/* Download Section */}
         <section className="px-2 sm:px-6 py-16 max-w-full mx-auto">
-          <div className="relative rounded-3xl p-[3px] bg-gradient-to-b from-[#00D0F5] via-[#00D0F5]/50 to-transparent">
-            <div className="bg-gradient-to-br from-[#0A4A5C] to-[#041D26] rounded-3xl px-8 md:px-17 py-12 sm:py-16">
-              <h2 className="text-3xl sm:text-4xl font-work-sans font-bold mb-3 text-white">
-                Start Vibing Today.
-              </h2>
-              <p className="text-base sm:text-lg font-inter mb-8 text-white/80">
-                Available on Android (iOS coming soon)
-              </p>
+          <div className="rounded-3xl border-[3px] border-[#00CEF2] bg-gradient-to-b from-[#021A23] to-[#017086] px-6 md:px-16 py-10 sm:py-14 text-center lg:text-left">
+            <h2 className="text-3xl sm:text-4xl font-work-sans font-semibold mb-3 text-white">
+              Start Vibing Today.
+            </h2>
+            <p className="text-sm sm:text-lg font-inter mb-8 text-white/90">
+              Available on Android (iOS coming soon)
+            </p>
 
-              <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center sm:items-start gap-4">
+            <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-6">
                 {/* Google Play Button */}
                 <a
                   href="#"
-                  className="inline-flex items-center gap-3 bg-black hover:bg-black/80 text-white px-6 py-3 rounded-xl transition-all hover:scale-105 border border-white/10"
+                  className="inline-flex items-center justify-center gap-3 w-[180px] h-[60px] bg-black text-white rounded-xl border border-[#A6A6A6] transition-transform hover:scale-105"
+                  style={{ backgroundColor: "#000000" }}
                 >
                   <svg
                     className="w-8 h-8"
@@ -321,16 +321,17 @@ export default function ChatrizzLanding() {
                       </linearGradient>
                     </defs>
                   </svg>
-                  <div className="text-left">
-                    <p className="text-xs text-white/70">GET IT ON</p>
-                    <p className="text-lg font-semibold">Google Play</p>
+                  <div className="text-left leading-tight">
+                    <p className="text-xs">GET IT ON</p>
+                    <p className="text-xl font-medium">Google Play</p>
                   </div>
                 </a>
 
                 {/* App Store Button */}
                 <a
                   href="#"
-                  className="inline-flex items-center gap-3 bg-black hover:bg-black/80 text-white px-6 py-3 rounded-xl transition-all hover:scale-105 border border-white/10"
+                  className="inline-flex items-center justify-center gap-3 w-[180px] h-[60px] bg-black text-white rounded-xl border border-[#A6A6A6] transition-transform hover:scale-105"
+                  style={{ backgroundColor: "#000000" }}
                 >
                   <svg
                     className="w-8 h-8"
@@ -340,12 +341,11 @@ export default function ChatrizzLanding() {
                   >
                     <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
                   </svg>
-                  <div className="text-left">
-                    <p className="text-xs text-white/70">Download on the</p>
-                    <p className="text-lg font-semibold">App Store</p>
+                  <div className="text-left leading-tight">
+                    <p className="text-xs">Download on the</p>
+                    <p className="text-xl font-medium">App Store</p>
                   </div>
                 </a>
-              </div>
             </div>
           </div>
         </section>
@@ -363,9 +363,10 @@ export default function ChatrizzLanding() {
                       alt="Logo"
                       width={32}
                       height={32}
+                      className="-ml-2"
                     />
-                    <p className="text-2xl font-cabinet  flex">
-                      <p className="font-[600]">Chat</p>rizz
+                    <p className="text-2xl font-cabinet">
+                      <span className="font-[600]">Chat</span>rizz
                     </p>
                   </div>
                 </div>
@@ -530,7 +531,7 @@ export default function ChatrizzLanding() {
 
             {/* Copyright */}
             <div className="mt-12 pt-8 border-t border-white/10 text-center">
-              <p className="text-white/60 text-sm">Copyright © Chatrizz 2025</p>
+              <p className="text-white/60 text-sm">Copyright © Chatrizz {new Date().getFullYear()}</p>
             </div>
           </div>
         </footer>
