@@ -15,17 +15,27 @@ export type Section = { title: string; blocks: Block[] };
 const linkClass =
   "text-cyan-400 hover:text-cyan-300 underline transition-colors break-all";
 
-// Turns any https:// URL inside a string into a link.
+const emailPattern = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
+
+// Turns any https:// URL or email address inside a string into a link.
 const withLinks = (text: string): ReactNode =>
-  text.split(/(https?:\/\/[^\s]+)/g).map((part, i) =>
-    /^https?:\/\//.test(part) ? (
-      <a key={i} href={part} className={linkClass}>
-        {part}
-      </a>
-    ) : (
-      part
-    )
-  );
+  text
+    .split(/(https?:\/\/[^\s]+|[^\s@]+@[^\s@]+\.[a-z]{2,})/gi)
+    .map((part, i) => {
+      if (/^https?:\/\//.test(part))
+        return (
+          <a key={i} href={part} className={linkClass}>
+            {part}
+          </a>
+        );
+      if (emailPattern.test(part))
+        return (
+          <a key={i} href={`mailto:${part}`} className={linkClass}>
+            {part}
+          </a>
+        );
+      return part;
+    });
 
 const renderBlock = (block: Block, i: number) => {
   if (typeof block === "string") return <p key={i}>{withLinks(block)}</p>;

@@ -14,7 +14,7 @@ const sections: Section[] = [
         fields: [
           ["Legal Company Name", "[Insert registered company name]"],
           ["Website", SITE],
-          ["Contact Email", "[Insert official support email]"],
+          ["Contact Email", "info@chatrizz.co"],
         ],
       },
       "By registering, accessing or using Chatrizz, you agree to be bound by these Terms and our Privacy Policy.",
@@ -409,9 +409,9 @@ const sections: Section[] = [
       {
         fields: [
           ["Website", SITE],
-          ["Email", "[Insert official support email]"],
+          ["Email", "info@chatrizz.co"],
           ["Registered Company", "[Insert registered company name]"],
-          ["Business Address", "[Insert registered business address]"],
+          ["Business Address", "3 Akron Drive, Wolverhampton, WV10 6EG"],
         ],
       },
     ],
