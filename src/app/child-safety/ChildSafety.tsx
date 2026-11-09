@@ -34,7 +34,7 @@ const sections: Section[] = [
       {
         list: [
           "**In the app:** open the ⋯ menu on a post, choose **Report** and select a reason. Reports are anonymous. You can also block any user from their profile or from Settings → Blocked users.",
-          "**By email:** send details (the username, a link to the post or a description, and when it happened) to **[SAFETY EMAIL]**.",
+          "**By email:** send details (the username, a link to the post or a description, and when it happened) to **info@chatrizz.co**.",
           "**If a child is in immediate danger,** contact your local police first.",
         ],
       },
@@ -65,7 +65,7 @@ const sections: Section[] = [
   {
     title: "Contact",
     blocks: [
-      "Our child safety point of contact can be reached at **[SAFETY EMAIL]**.",
+      "Our child safety point of contact can be reached at **info@chatrizz.co**.",
       "Chatrizz Ltd, 3 Akron Drive, Wolverhampton, WV10 6EG",
     ],
   },
