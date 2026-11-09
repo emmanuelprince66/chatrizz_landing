@@ -396,6 +396,14 @@ export default function ChatrizzLanding() {
                       Privacy Policy
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      href="/child-safety"
+                      className="text-white/70 hover:text-white transition-colors text-sm"
+                    >
+                      Child Safety Standards
+                    </Link>
+                  </li>
                 </ul>
               </div>
 

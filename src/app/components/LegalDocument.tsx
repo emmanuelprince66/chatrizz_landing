@@ -1,16 +1,18 @@
 import type { ReactNode } from "react";
 
 // Content blocks: a string is a paragraph, { list } is a bullet list,
-// { numbered } is a numbered list of bold label + text, { sub } is a
-// sub-heading, { fields } is a bold label/value group.
+// { numbered } is a numbered list of bold label + text, { steps } is a plain
+// numbered list, { sub } is a sub-heading, { fields } is a bold label/value
+// group. Paragraphs and list items may use **bold**.
 export type Block =
   | string
   | { list: string[] }
   | { numbered: [string, string][] }
+  | { steps: string[] }
   | { sub: string }
   | { fields: [string, string][] };
 
-export type Section = { title: string; blocks: Block[] };
+export type Section = { title?: string; blocks: Block[] };
 
 const linkClass =
   "text-cyan-400 hover:text-cyan-300 underline transition-colors break-all";
@@ -37,8 +39,19 @@ const withLinks = (text: string): ReactNode =>
       return part;
     });
 
+const withFormatting = (text: string): ReactNode =>
+  text.split(/\*\*(.+?)\*\*/g).map((part, i) =>
+    i % 2 === 1 ? (
+      <strong key={i} className="font-semibold text-white">
+        {withLinks(part)}
+      </strong>
+    ) : (
+      withLinks(part)
+    )
+  );
+
 const renderBlock = (block: Block, i: number) => {
-  if (typeof block === "string") return <p key={i}>{withLinks(block)}</p>;
+  if (typeof block === "string") return <p key={i}>{withFormatting(block)}</p>;
   if ("sub" in block)
     return (
       <h3 key={i} className="text-white font-semibold pt-2">
@@ -49,9 +62,17 @@ const renderBlock = (block: Block, i: number) => {
     return (
       <ul key={i} className="list-disc pl-5 space-y-1">
         {block.list.map((item) => (
-          <li key={item}>{withLinks(item)}</li>
+          <li key={item}>{withFormatting(item)}</li>
         ))}
       </ul>
+    );
+  if ("steps" in block)
+    return (
+      <ol key={i} className="list-decimal pl-5 space-y-1">
+        {block.steps.map((item) => (
+          <li key={item}>{withFormatting(item)}</li>
+        ))}
+      </ol>
     );
   if ("numbered" in block)
     return (
@@ -77,7 +98,7 @@ const renderBlock = (block: Block, i: number) => {
 
 type Props = {
   title: string;
-  effectiveDate: string;
+  effectiveDate?: string;
   lastUpdated: string;
   sections: Section[];
   tagline: string;
@@ -98,9 +119,11 @@ const LegalDocument = ({
           <h1 className="text-white text-2xl md:text-3xl font-bold mb-2">
             {title}
           </h1>
-          <p className="text-cyan-50 text-sm md:text-base">
-            Effective Date: {effectiveDate}
-          </p>
+          {effectiveDate && (
+            <p className="text-cyan-50 text-sm md:text-base">
+              Effective Date: {effectiveDate}
+            </p>
+          )}
           <p className="text-cyan-50 text-sm md:text-base">
             Last Updated: {lastUpdated}
           </p>
@@ -109,11 +132,13 @@ const LegalDocument = ({
         {/* Document Content */}
         <div className="bg-slate-800/50 backdrop-blur rounded-xl p-5 md:p-6 shadow-lg border border-slate-700/50">
           <div className="space-y-8 text-slate-300 text-sm md:text-base leading-relaxed">
-            {sections.map((section) => (
-              <section key={section.title} className="space-y-3">
-                <h2 className="text-cyan-400 font-semibold text-base md:text-lg">
-                  {section.title}
-                </h2>
+            {sections.map((section, i) => (
+              <section key={i} className="space-y-3">
+                {section.title && (
+                  <h2 className="text-cyan-400 font-semibold text-base md:text-lg">
+                    {section.title}
+                  </h2>
+                )}
                 {section.blocks.map(renderBlock)}
               </section>
             ))}
